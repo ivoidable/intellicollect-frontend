@@ -40,7 +40,9 @@ export interface CreateCustomerRequest {
   industry?: string
 }
 
-export interface UpdateCustomerRequest extends Partial<CreateCustomerRequest> {}
+export interface UpdateCustomerRequest extends Partial<CreateCustomerRequest> {
+  risk_level?: 'low' | 'medium' | 'high' | 'critical'
+}
 
 export interface CustomersResponse extends PaginatedResponse<Customer> {
   customers: Customer[]
