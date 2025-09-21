@@ -162,7 +162,7 @@ export default function InvoiceDetailPage() {
 
     setActionLoading(prev => ({ ...prev, edit: true }))
     try {
-      const result = await updateInvoice(invoice.id, editFormData)
+      const result = await updateInvoice(invoice.invoice_id, editFormData)
       if (result) {
         setEditDialogOpen(false)
         refetch()
@@ -179,7 +179,7 @@ export default function InvoiceDetailPage() {
 
     setActionLoading(prev => ({ ...prev, delete: true }))
     try {
-      const result = await deleteInvoice(invoice.id)
+      const result = await deleteInvoice(invoice.invoice_id)
       if (result) {
         router.push('/dashboard/invoices')
       }
@@ -346,11 +346,7 @@ export default function InvoiceDetailPage() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-sm text-gray-600">Created</span>
-                      <span className="text-sm">{formatDate(invoice.created_at)}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-600">Last Updated</span>
-                      <span className="text-sm">{formatDate(invoice.updated_at)}</span>
+                      <span className="text-sm">{invoice.created_timestamp ? formatDate(invoice.created_timestamp) : 'N/A'}</span>
                     </div>
                   </div>
                 </div>

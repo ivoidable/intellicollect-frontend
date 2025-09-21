@@ -119,10 +119,11 @@ export default function DashboardPage() {
     return Math.round((paid_invoices / total_invoices) * 100)
   }, [dashboardData])
 
-  // Calculate actual outstanding balance from dashboard analytics
+  // Calculate actual outstanding balance from invoice data
   const totalOutstanding = useMemo(() => {
-    return dashboardData?.revenue_metrics?.outstanding_revenue || 0
-  }, [dashboardData])
+    if (!invoicesData?.invoices) return 0
+    return invoicesData.invoices.reduce((total, invoice) => total + invoice.outstanding_amount, 0)
+  }, [invoicesData])
 
   // Loading state (only show if all are loading and no errors)
   if ((summaryLoading || dashboardLoading || invoicesLoading) && !summaryError) {
