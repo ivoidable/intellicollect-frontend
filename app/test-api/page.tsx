@@ -165,7 +165,7 @@ export default function TestApiPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
             <div>
               <span className="font-medium">API Base URL:</span>
-              <p className="text-gray-600">{process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8001/api/v1'}</p>
+              <p className="text-gray-600">{process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8001/api'}</p>
             </div>
             <div>
               <span className="font-medium">Backend Base URL:</span>

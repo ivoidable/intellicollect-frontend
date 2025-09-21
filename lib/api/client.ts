@@ -21,7 +21,7 @@ import {
   ApiError,
 } from '@/types/api'
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://backend.newvisions.pro/api/v1'
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://backend.newvisions.pro/api'
 const BACKEND_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL || 'https://backend.newvisions.pro'
 
 class ApiClient {
@@ -29,7 +29,7 @@ class ApiClient {
     endpoint: string,
     options: RequestInit = {}
   ): Promise<T> {
-    const url = endpoint.startsWith('/api/v1')
+    const url = endpoint.startsWith('/api')
       ? `${BACKEND_BASE_URL}${endpoint}`
       : endpoint.startsWith('/health') || endpoint === '/'
       ? `${BACKEND_BASE_URL}${endpoint}`
