@@ -21,8 +21,8 @@ import {
   ApiError,
 } from '@/types/api'
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8001/api/v1'
-const BACKEND_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL || 'http://localhost:8001'
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://backend.newvisions.pro/api/v1'
+const BACKEND_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL || 'https://backend.newvisions.pro'
 
 class ApiClient {
   private async request<T>(
