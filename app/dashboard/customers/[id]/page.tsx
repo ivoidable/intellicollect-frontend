@@ -503,7 +503,7 @@ export default function CustomerDetailPage() {
                   </TableHeader>
                   <TableBody>
                     {invoices.map((invoice) => (
-                      <TableRow key={invoice.id}>
+                      <TableRow key={invoice.invoice_id}>
                         <TableCell>
                           <Link
                             href={`/dashboard/invoices/${invoice.invoice_id}`}
